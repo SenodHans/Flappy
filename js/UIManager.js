@@ -28,7 +28,7 @@ class UIManager {
             leaderboardSection: document.getElementById('leaderboardSection'),
 
             // Profile elements
-            playerNameInput: document.getElementById('playerNameInput'),
+            usernameInput: document.getElementById('usernameInput'),
             startGameBtn: document.getElementById('startGameBtn'),
 
             // Stats bar
@@ -315,10 +315,10 @@ class UIManager {
      * Show profile section
      */
     showProfileSection() {
-        this.elements.profileSection.classList.remove('hidden');
-        this.elements.gameSection.classList.add('hidden');
-        this.elements.playerNameInput.value = '';
-        this.elements.playerNameInput.focus();
+        this.elements.profileSection.classList.add('active');
+        this.elements.gameSection.classList.remove('active');
+        this.elements.usernameInput.value = '';
+        this.elements.usernameInput.focus();
         this.hideVictoryModal();
     }
 
