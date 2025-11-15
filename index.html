@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Ladder Climb - Math Challenge Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login/Profile Section (Virtual Identity) -->
+        <div id="loginScreen" class="screen active">
+            <div class="login-card">
+                <h1>🪜 Puzzle Ladder Climb</h1>
+                <p class="subtitle">Solve puzzles to reach the top!</p>
+                <div class="login-form">
+                    <input type="text" id="usernameInput" placeholder="Enter your username" maxlength="20">
+                    <button id="startGameBtn" class="btn btn-primary">Start Climbing</button>
+                </div>
+                <div id="playerStats" class="stats-preview"></div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="player-info">
+                    <span class="player-name" id="currentPlayer"></span>
+                    <span class="player-score">Score: <span id="currentScore">0</span></span>
+                </div>
+                <button id="quitBtn" class="btn btn-secondary">Quit</button>
+            </div>
+
+            <div class="game-content">
+                <!-- Ladder Visualization -->
+                <div class="ladder-container">
+                    <div class="ladder">
+                        <div class="trophy">🏆</div>
+                        <div class="ladder-step" data-step="10"><span class="step-number">10</span></div>
+                        <div class="ladder-step" data-step="9"><span class="step-number">9</span></div>
+                        <div class="ladder-step" data-step="8"><span class="step-number">8</span></div>
+                        <div class="ladder-step" data-step="7"><span class="step-number">7</span></div>
+                        <div class="ladder-step" data-step="6"><span class="step-number">6</span></div>
+                        <div class="ladder-step" data-step="5"><span class="step-number">5</span></div>
+                        <div class="ladder-step" data-step="4"><span class="step-number">4</span></div>
+                        <div class="ladder-step" data-step="3"><span class="step-number">3</span></div>
+                        <div class="ladder-step" data-step="2"><span class="step-number">2</span></div>
+                        <div class="ladder-step" data-step="1"><span class="step-number">1</span></div>
+                        <div class="ladder-step active" data-step="0"><span class="step-number">START</span></div>
+                        <div class="player-avatar" id="playerAvatar">🧗</div>
+                    </div>
+                </div>
+
+                <!-- Puzzle Section -->
+                <div class="puzzle-container">
+                    <div class="puzzle-header">
+                        <h2>Solve the Puzzle</h2>
+                        <div class="puzzle-info">
+                            <span>Step: <span id="currentStep">0</span>/10</span>
+                            <span>Attempts: <span id="attemptsCount">0</span></span>
+                        </div>
+                    </div>
+
+                    <div id="puzzleContent" class="puzzle-content">
+                        <div class="loading">Loading puzzle...</div>
+                    </div>
+
+                    <div class="puzzle-image-container">
+                        <img id="puzzleImage" src="" alt="Puzzle" class="puzzle-image">
+                    </div>
+
+                    <div class="answer-section">
+                        <input type="number" id="answerInput" placeholder="Enter your answer (0-9)" min="0" max="9">
+                        <button id="submitBtn" class="btn btn-primary">Submit Answer</button>
+                    </div>
+
+                    <div id="feedback" class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Victory Screen -->
+        <div id="victoryScreen" class="screen">
+            <div class="victory-card">
+                <h1>🎉 Congratulations!</h1>
+                <p class="victory-message">You've reached the top of the ladder!</p>
+                <div class="victory-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Attempts:</span>
+                        <span class="stat-value" id="finalAttempts">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Accuracy:</span>
+                        <span class="stat-value" id="finalAccuracy">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Score:</span>
+                        <span class="stat-value" id="finalScore">0</span>
+                    </div>
+                </div>
+                <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modular JavaScript Architecture -->
+    <script src="js/EventBus.js"></script>
+    <script src="js/APIService.js"></script>
+    <script src="js/PlayerProfile.js"></script>
+    <script src="js/UIManager.js"></script>
+    <script src="js/GameController.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
