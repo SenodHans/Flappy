@@ -23,8 +23,8 @@ class UIManager {
     cacheElements() {
         return {
             // Sections
-            profileSection: document.getElementById('profileSection'),
-            gameSection: document.getElementById('gameSection'),
+            profileSection: document.getElementById('loginScreen'),
+            gameSection: document.getElementById('gameScreen'),
             leaderboardSection: document.getElementById('leaderboardSection'),
 
             // Profile elements
@@ -32,10 +32,10 @@ class UIManager {
             startGameBtn: document.getElementById('startGameBtn'),
 
             // Stats bar
-            playerName: document.getElementById('playerName'),
-            currentPosition: document.getElementById('currentPosition'),
+            playerName: document.getElementById('currentPlayer'),
+            currentPosition: document.getElementById('currentStep'),
             currentScore: document.getElementById('currentScore'),
-            accuracy: document.getElementById('accuracy'),
+            accuracy: document.getElementById('finalAccuracy'),
 
             // Ladder
             ladderSteps: document.querySelectorAll('.ladder-step'),
@@ -53,13 +53,13 @@ class UIManager {
             retryBtn: document.getElementById('retryBtn'),
 
             // Victory modal
-            victoryModal: document.getElementById('victoryModal'),
-            finalPuzzles: document.getElementById('finalPuzzles'),
-            finalCorrect: document.getElementById('finalCorrect'),
+            victoryModal: document.getElementById('victoryScreen'),
+            finalPuzzles: document.getElementById('finalAttempts'),
+            finalCorrect: document.getElementById('finalAttempts'),
             finalScore: document.getElementById('finalScore'),
             finalAccuracy: document.getElementById('finalAccuracy'),
             playAgainBtn: document.getElementById('playAgainBtn'),
-            newPlayerBtn: document.getElementById('newPlayerBtn'),
+            newPlayerBtn: document.getElementById('startGameBtn'),
 
             // Leaderboard
             leaderboardList: document.getElementById('leaderboardList')
